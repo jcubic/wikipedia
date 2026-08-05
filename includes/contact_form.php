@@ -4,7 +4,7 @@
                                 <p class="contact-subtitle">Masz pytanie lub chcesz omówić swój projekt? Wypełnij formularz, a skontaktuję się z Tobą jak najszybciej.</p>
                                 <?php $contact_email = 'jakub@wikizeit.edu.pl'; ?>
                                 <p class="contact-email">
-                                    <span class="material-symbols-outlined">alternate_email</span>
+                                    <span class="material-symbols-outlined">mail</span>
                                     <span><?= htmlspecialchars(str_replace(['@', '.'], [' [@] ', ' [.] '], $contact_email)) ?></span>
                                 </p>
                             </div>

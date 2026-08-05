@@ -999,6 +999,13 @@ details[open] .accordion-icon {
     text-align: center;
 }
 
+.contact-email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 .contact-title {
     color: var(--color-gray-900);
     font-size: 1.375rem;
