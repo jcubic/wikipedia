@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $body .= "Message:\n" . $user_message;
 
-        $headers = "From: WikiZEIT <jcubic@wikizeit.edu.pl>\r\n";
+        $headers = "From: WikiZEIT <jakub@wikizeit.edu.pl>\r\n";
         $headers .= "Reply-To: " . $from . "\r\n";
         $headers .= "Message-ID: " . $messageId . "\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-        if (mail($to, $subject, $body, $headers)) {
+        if (mail($to, $subject, $body, $headers, '-f jakub@wikizeit.edu.pl')) {
             recordSubmission('oferta', $email);
 
             if ($sendCopy) {
@@ -46,15 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 $copyBody .= "Message:\n" . $user_message;
 
-                $copyHeaders = "From: WikiZEIT <jcubic@wikizeit.edu.pl>\r\n";
+                $copyHeaders = "From: WikiZEIT <jakub@wikizeit.edu.pl>\r\n";
                 $copyHeaders .= "References: " . $messageId . "\r\n";
                 $copyHeaders .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-                mail($email, $subject, $copyBody, $copyHeaders);
+                mail($email, $subject, $copyBody, $copyHeaders, '-f jakub@wikizeit.edu.pl');
             }
 
             $message_sent = true;
         } else {
+            $lastError = error_get_last();
+            error_log('oferta contact form mail() failed. ' . ($lastError['message'] ?? 'no PHP error reported'));
             $error_message = 'Przepraszam, ale wystąpił błąd wysłania wiadomosci. Spróbuj jeszcze raz.';
         }
     } else {
