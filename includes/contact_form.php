@@ -8,7 +8,7 @@
                                     <span><?= htmlspecialchars(str_replace(['@', '.'], [' [@] ', ' [.] '], $contact_email)) ?></span>
                                 </p>
                             </div>
-                            <form class="contact-form" method="POST">
+                            <form class="contact-form" action="#kontakt" method="POST">
                                 <div class="form-group email-confirmation-field" aria-hidden="true">
                                     <label class="form-label" for="email_confirmation">Potwierdź email</label>
                                     <input class="form-input" type="text" id="email_confirmation" name="email_confirmation" placeholder="jan@example.com" tabindex="-1" autocomplete="off"/>
