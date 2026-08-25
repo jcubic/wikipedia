@@ -122,6 +122,7 @@ require __DIR__ . '/includes/header.php';
                                     </h2>
                                 </div>
                                 <a class="btn btn-primary btn-hero"
+                                   href="https://app.cal.eu/jcubic/darmowa-konsultacja"
                                    data-cal-link="jcubic/darmowa-konsultacja"
                                    data-cal-namespace="darmowa-konsultacja"
                                    data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>

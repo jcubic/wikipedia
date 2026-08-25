@@ -169,7 +169,9 @@
       }
       var calLink = document.querySelector('[data-cal-link]');
       if (calLink) {
-          calLink.addEventListener('click', function() {
+          calLink.addEventListener('click', function(e) {
+              // With JS the cal.com popup opens, so block the href fallback navigation.
+              e.preventDefault();
               track('CTA', { action: 'darmowa-rozmowa' });
           });
       }
